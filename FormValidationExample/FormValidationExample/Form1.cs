@@ -94,5 +94,11 @@ namespace FormValidationExample
 		{
 			btnAdd.Enabled = cbTermsAndConditions.Checked;
 		}
+
+		private void llblTermsAndConditions_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			FormTermsAndConditions formTermsAndConditions = new FormTermsAndConditions();
+			formTermsAndConditions.ShowDialog();
+		}
 	}
 }

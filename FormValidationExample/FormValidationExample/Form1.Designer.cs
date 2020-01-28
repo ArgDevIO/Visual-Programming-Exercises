@@ -226,6 +226,7 @@
 			this.llblTermsAndConditions.TabIndex = 10;
 			this.llblTermsAndConditions.TabStop = true;
 			this.llblTermsAndConditions.Text = "terms and contitions";
+			this.llblTermsAndConditions.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblTermsAndConditions_LinkClicked);
 			// 
 			// Form1
 			// 
