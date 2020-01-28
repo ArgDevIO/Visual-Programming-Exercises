@@ -192,6 +192,7 @@
 			this.tbCode.Name = "tbCode";
 			this.tbCode.Size = new System.Drawing.Size(181, 20);
 			this.tbCode.TabIndex = 7;
+			this.tbCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCode_KeyPress);
 			// 
 			// errorProviderAge
 			// 

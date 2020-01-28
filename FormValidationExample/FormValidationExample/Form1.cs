@@ -72,5 +72,16 @@ namespace FormValidationExample
 			errorMsg = "e-mail address must be in a valid format \nEx.: 'someone@example.com' ";
 			return false;
 		}
+
+		private void tbCode_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char c = e.KeyChar;
+			if (c != '\b' && !((c >= 'a' && c <= 'f') || (c <= 'F' && c >= 'A') || (c >= '0' && c <= '9')))
+			{
+				e.Handled = true;
+			}
+			if (c >= 'a' && c <= 'f')
+				e.KeyChar = char.ToUpper(e.KeyChar);
+		}
 	}
 }
