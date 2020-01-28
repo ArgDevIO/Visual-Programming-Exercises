@@ -35,5 +35,42 @@ namespace FormValidationExample
 			else
 				errorProviderAge.SetError(tbAge, "");
 		}
+
+		private void tbEmail_Validating(object sender, CancelEventArgs e)
+		{
+			string errorMsg;
+			if (!ValidEmailAddress(tbEmail.Text, out errorMsg))
+			{
+				// Cancel the event
+				e.Cancel = true;
+				errorProviderEmail.SetError(tbEmail, errorMsg);
+			}
+			else
+				errorProviderEmail.SetError(tbEmail, "");
+		}
+
+		public bool ValidEmailAddress(string emailAddress, out string errorMsg)
+		{
+			// Confirm that the e-mail address string is not empty
+			if (emailAddress.Length == 0)
+			{
+				errorMsg = "e-mail address is required!";
+				return false;
+			}
+
+			// Confirm that there is an "@" and a "." in the e-mail address,
+			// and in the correct order
+			int atpos;
+			if ((atpos = emailAddress.IndexOf("@")) > -1)
+			{
+				if (emailAddress.IndexOf(".", atpos) > atpos && emailAddress.IndexOf("@", atpos+1) <= atpos)
+				{
+					errorMsg = "";
+					return true;
+				}
+			}
+			errorMsg = "e-mail address must be in a valid format \nEx.: 'someone@example.com' ";
+			return false;
+		}
 	}
 }

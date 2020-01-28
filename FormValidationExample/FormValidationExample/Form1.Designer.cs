@@ -45,7 +45,9 @@
 			this.tbEmail = new System.Windows.Forms.TextBox();
 			this.tbCode = new System.Windows.Forms.TextBox();
 			this.errorProviderAge = new System.Windows.Forms.ErrorProvider(this.components);
+			this.errorProviderEmail = new System.Windows.Forms.ErrorProvider(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.errorProviderAge)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lbl_name_surname
@@ -182,6 +184,7 @@
 			this.tbEmail.Name = "tbEmail";
 			this.tbEmail.Size = new System.Drawing.Size(181, 20);
 			this.tbEmail.TabIndex = 6;
+			this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this.tbEmail_Validating);
 			// 
 			// tbCode
 			// 
@@ -193,6 +196,10 @@
 			// errorProviderAge
 			// 
 			this.errorProviderAge.ContainerControl = this;
+			// 
+			// errorProviderEmail
+			// 
+			this.errorProviderEmail.ContainerControl = this;
 			// 
 			// Form1
 			// 
@@ -217,6 +224,7 @@
 			this.Name = "Form1";
 			this.Text = "Input Form";
 			((System.ComponentModel.ISupportInitialize)(this.errorProviderAge)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -240,6 +248,7 @@
 		private System.Windows.Forms.TextBox tbEmail;
 		private System.Windows.Forms.TextBox tbCode;
 		private System.Windows.Forms.ErrorProvider errorProviderAge;
+		private System.Windows.Forms.ErrorProvider errorProviderEmail;
 	}
 }
 
