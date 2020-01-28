@@ -83,5 +83,16 @@ namespace FormValidationExample
 			if (c >= 'a' && c <= 'f')
 				e.KeyChar = char.ToUpper(e.KeyChar);
 		}
+
+		private void btnAdd_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("Exiting...");
+			this.Close();
+		}
+
+		private void cbTermsAndConditions_CheckedChanged(object sender, EventArgs e)
+		{
+			btnAdd.Enabled = cbTermsAndConditions.Checked;
+		}
 	}
 }

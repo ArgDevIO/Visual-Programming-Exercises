@@ -36,7 +36,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnAdd = new System.Windows.Forms.Button();
 			this.tbNameSurname = new System.Windows.Forms.TextBox();
 			this.tbAddress = new System.Windows.Forms.TextBox();
 			this.tbCity = new System.Windows.Forms.TextBox();
@@ -46,6 +46,8 @@
 			this.tbCode = new System.Windows.Forms.TextBox();
 			this.errorProviderAge = new System.Windows.Forms.ErrorProvider(this.components);
 			this.errorProviderEmail = new System.Windows.Forms.ErrorProvider(this.components);
+			this.cbTermsAndConditions = new System.Windows.Forms.CheckBox();
+			this.llblTermsAndConditions = new System.Windows.Forms.LinkLabel();
 			((System.ComponentModel.ISupportInitialize)(this.errorProviderAge)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
 			this.SuspendLayout();
@@ -113,14 +115,16 @@
 			this.label5.TabIndex = 6;
 			this.label5.Text = "Postal Code:";
 			// 
-			// button1
+			// btnAdd
 			// 
-			this.button1.Location = new System.Drawing.Point(97, 267);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(151, 42);
-			this.button1.TabIndex = 8;
-			this.button1.Text = "Add";
-			this.button1.UseVisualStyleBackColor = true;
+			this.btnAdd.Enabled = false;
+			this.btnAdd.Location = new System.Drawing.Point(97, 276);
+			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.Size = new System.Drawing.Size(151, 42);
+			this.btnAdd.TabIndex = 8;
+			this.btnAdd.Text = "Add";
+			this.btnAdd.UseVisualStyleBackColor = true;
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
 			// tbNameSurname
 			// 
@@ -202,11 +206,34 @@
 			// 
 			this.errorProviderEmail.ContainerControl = this;
 			// 
+			// cbTermsAndConditions
+			// 
+			this.cbTermsAndConditions.AutoSize = true;
+			this.cbTermsAndConditions.Location = new System.Drawing.Point(137, 244);
+			this.cbTermsAndConditions.Name = "cbTermsAndConditions";
+			this.cbTermsAndConditions.Size = new System.Drawing.Size(59, 17);
+			this.cbTermsAndConditions.TabIndex = 9;
+			this.cbTermsAndConditions.Text = "I agree";
+			this.cbTermsAndConditions.UseVisualStyleBackColor = true;
+			this.cbTermsAndConditions.CheckedChanged += new System.EventHandler(this.cbTermsAndConditions_CheckedChanged);
+			// 
+			// llblTermsAndConditions
+			// 
+			this.llblTermsAndConditions.AutoSize = true;
+			this.llblTermsAndConditions.Location = new System.Drawing.Point(190, 245);
+			this.llblTermsAndConditions.Name = "llblTermsAndConditions";
+			this.llblTermsAndConditions.Size = new System.Drawing.Size(101, 13);
+			this.llblTermsAndConditions.TabIndex = 10;
+			this.llblTermsAndConditions.TabStop = true;
+			this.llblTermsAndConditions.Text = "terms and contitions";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(348, 321);
+			this.Controls.Add(this.llblTermsAndConditions);
+			this.Controls.Add(this.cbTermsAndConditions);
 			this.Controls.Add(this.tbCode);
 			this.Controls.Add(this.tbEmail);
 			this.Controls.Add(this.tbAge);
@@ -214,7 +241,7 @@
 			this.Controls.Add(this.tbCity);
 			this.Controls.Add(this.tbAddress);
 			this.Controls.Add(this.tbNameSurname);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btnAdd);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label4);
@@ -240,7 +267,7 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnAdd;
 		private System.Windows.Forms.TextBox tbNameSurname;
 		private System.Windows.Forms.TextBox tbAddress;
 		private System.Windows.Forms.TextBox tbCity;
@@ -250,6 +277,8 @@
 		private System.Windows.Forms.TextBox tbCode;
 		private System.Windows.Forms.ErrorProvider errorProviderAge;
 		private System.Windows.Forms.ErrorProvider errorProviderEmail;
+		private System.Windows.Forms.LinkLabel llblTermsAndConditions;
+		private System.Windows.Forms.CheckBox cbTermsAndConditions;
 	}
 }
 
